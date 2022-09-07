@@ -59,10 +59,7 @@ alert(w)
 alert(h)
 }, []);
   return (
-    <div style={{  display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }}>
+    <div>
      
             {modalIsOpenQTModal ? (
               <QTGraph />
