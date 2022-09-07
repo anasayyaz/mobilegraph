@@ -76,7 +76,7 @@ const QTGraph = (props) => {
         },
       ],
     });
-alert(graphData)
+
 console.log(graphData);
   }, [data, visitDate]);
 

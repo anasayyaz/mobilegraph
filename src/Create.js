@@ -55,8 +55,7 @@ const Create = (props) => {
   pid=props.match.params.pid;
   h=props.match.params.height;
   w=props.match.params.width;
-alert(w)
-alert(h)
+
 }, []);
   return (
     <div>
