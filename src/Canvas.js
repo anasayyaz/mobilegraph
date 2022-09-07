@@ -131,12 +131,12 @@ if(status==1)
   }, [data]);
 
   return (
-    <React.Fragment>
+    <div className="w-100">
       {status ? (
       <canvas
         ref={canvasRef}
-        width="800"
-        height="400"
+        width={props.w}
+        height={props.h}
         style={{
           backgroundColor: "black",
         }}
@@ -157,7 +157,7 @@ if(status==1)
         }
 
 
-    </React.Fragment>
+</div>
   );
 };
 
