@@ -136,7 +136,7 @@ if(status==1)
       {status ? (
       <canvas
         ref={canvasRef}
-        width={"360"}
+        width={"300"}
         height={"300"}
         style={{
           backgroundColor: "black",
