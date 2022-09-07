@@ -51,7 +51,8 @@ let x,y;
     // console.log(data);
     // alert("status"+status)
 if(status==1)
-     {const canvas = canvasRef.current;
+     {
+      const canvas = canvasRef.current;
       var ctx = canvas.getContext("2d"),
       w = canvas.width,
       h = canvas.height,
@@ -61,21 +62,12 @@ if(status==1)
       py = h * 0.8,
       opy = py,
       scanBarWidth = 20;
-      //  ctx.transform(1, 0, 0, -1, 0, canvas.height);
+
       ctx.strokeStyle = "#202020";
            ctx.lineWidth = 1;
         
  
-  // for (x=0;x<=w;x+=40) {
-  //       for (y=0;y<=h;y+=40) {
-  //           ctx.moveTo(x, 0);
-  //           ctx.lineTo(x, h);
-  //           ctx.stroke();
-  //           ctx.moveTo(0, y);
-  //           ctx.lineTo(w, y);
-  //           ctx.stroke();
-  //       }
-  //   }
+ 
 
 
     var i = 0;
@@ -109,19 +101,10 @@ if(status==1)
    
         ctx.strokeStyle = "#202020";
   ctx.lineWidth = 1;
-// for (x=0;x<=w;x+=40) {
   alert("clearing");
          ctx.clearRect(0, 0, w, h);
       
-  //       for (y=0;y<=h;y+=40) {
-  //           ctx.moveTo(x, 0);
-  //           ctx.lineTo(x, h);
-  //           ctx.stroke();
-  //           ctx.moveTo(0, y);
-  //           ctx.lineTo(w, y);
-  //           ctx.stroke();
-  //       }
-  //   }
+ 
      
       }
 
@@ -136,8 +119,8 @@ if(status==1)
       {status ? (
       <canvas
         ref={canvasRef}
-        width="800"
-        height="400"
+        width="400"
+        height="300"
         style={{
           backgroundColor: "black",
         }}
