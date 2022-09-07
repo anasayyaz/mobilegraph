@@ -1,16 +1,10 @@
 import React, { useRef, useEffect, useState } from "react";
-
 let status;
-
 const Canvas = (props) => {
   const canvasRef = useRef(null);
-  
 let x,y;
   const [errorText, setErrorText] = useState();
   const [data, setData] = useState([]);
-
-
-  
   const getECGValueApi = async () => {
     try {
       const response = await fetch(
@@ -50,7 +44,6 @@ let x,y;
   };
 
   useEffect(() => {
-    // alert(window.innerHeight+"   "+window.innerWidth)
     getECGValueApi();
   }, []);
 
@@ -60,8 +53,8 @@ let x,y;
 if(status==1)
      {const canvas = canvasRef.current;
       var ctx = canvas.getContext("2d"),
-      w = props.w,
-      h = props.h,
+      w = canvas.width,
+      h = canvas.height,
       px = 0,
       opx = 0,
       speed = 1,
@@ -117,6 +110,7 @@ if(status==1)
         ctx.strokeStyle = "#202020";
   ctx.lineWidth = 1;
 // for (x=0;x<=w;x+=40) {
+  alert("clearing");
          ctx.clearRect(0, 0, w, h);
       
   //       for (y=0;y<=h;y+=40) {
@@ -142,8 +136,8 @@ if(status==1)
       {status ? (
       <canvas
         ref={canvasRef}
-        width={window.innerWidth}
-        height={window.innerHeight}
+        width="800"
+        height="400"
         style={{
           backgroundColor: "black",
         }}
