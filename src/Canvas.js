@@ -110,6 +110,7 @@ if(status==1)
         ctx.strokeStyle = "#202020";
   ctx.lineWidth = 1;
 // for (x=0;x<=w;x+=40) {
+  alert("clear")
          ctx.clearRect(0, 0, w, h);
       
   //       for (y=0;y<=h;y+=40) {
@@ -135,7 +136,7 @@ if(status==1)
       {status ? (
       <canvas
         ref={canvasRef}
-        width={"100%"}
+        width={props.w}
         height={"300"}
         style={{
           backgroundColor: "black",
