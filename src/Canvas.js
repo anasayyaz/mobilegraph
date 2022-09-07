@@ -101,7 +101,7 @@ if(status==1)
    
         ctx.strokeStyle = "#202020";
   ctx.lineWidth = 1;
-  alert("clearing");
+ 
          ctx.clearRect(0, 0, w, h);
       
  
@@ -119,8 +119,8 @@ if(status==1)
       {status ? (
       <canvas
         ref={canvasRef}
-        width="400"
-        height="300"
+        width={props.w}
+        height={props.h}
         style={{
           backgroundColor: "black",
         }}
