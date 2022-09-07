@@ -74,7 +74,7 @@ const Create = (props) => {
               <TempGraph pid={pid} token={token}/>
               ) : null}
               {modalIsOpenEcgModal ? (
-              <Canvas vid={vid}/>
+              <Canvas vid={vid} pid={pid} token={token}/>
               ) : null}
               {modalIsOpenMAPModal ? (
               <h2>map</h2>

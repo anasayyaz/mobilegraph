@@ -1,10 +1,10 @@
 import React, { useRef, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+
 let status;
 
 const Canvas = (props) => {
   const canvasRef = useRef(null);
-  const token = useSelector((state) => state.userReducer.token);
+  
 let x,y;
   const [errorText, setErrorText] = useState();
   const [data, setData] = useState([]);
@@ -16,7 +16,7 @@ let x,y;
           method: "GET",
           body: null,
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${props.token}`,
           },
         }
       ).then((response) => {
