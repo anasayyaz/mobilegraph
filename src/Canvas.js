@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-let status;
+let status=1;
 const Canvas = (props) => {
   const canvasRef = useRef(null);
 let x,y;
