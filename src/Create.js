@@ -86,7 +86,7 @@ alert(h)
               <SPO2Graph />
               ) : null}
               {modalIsOpenTempModal ? (
-              <TempGraph vid={vid} pid={pid} token={token}/>
+              <TempGraph vid={vid} pid={pid} token={token} h={h} w={w}/>
               ) : null}
               {modalIsOpenEcgModal ? (
               <Canvas vid={vid} pid={pid} token={token} h={h} w={w}/>
