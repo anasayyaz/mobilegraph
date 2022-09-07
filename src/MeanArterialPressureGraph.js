@@ -5,19 +5,18 @@ let link='https://cloudclinicapi.azurewebsites.net/api/';
 var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
-const PIGraph = (props) => {
+const MapGraph = (props) => {
   let graphData = [];
 
   const [options, setOptions] = useState();
-
   const [errorText, setErrorText] = useState();
   const [data, setData] = useState([]);
   const [visitDate, setVisitDate] = useState([]);
 
-  const getPIValueApi = async () => {
+  const getMapValueApi = async () => {
     try {
       const response = await fetch(
-        `${link}VitalSign/getPatienttemp/${props.pid}`,
+        `${link}}VitalSign/getPatienttemp/${props.pid}`,
         {
           method: "GET",
           body: null,
@@ -29,7 +28,7 @@ const PIGraph = (props) => {
         response.json().then((data) => {
           if (data) {
             setVisitDate(data?.vitalsignGraph?.datetime.split(","));
-            setData(data?.vitalsignGraph?.pi.split(","));
+            setData(data?.vitalsignGraph?.map.split(","));
           }
         });
       });
@@ -40,7 +39,7 @@ const PIGraph = (props) => {
   };
 
   useEffect(() => {
-    getPIValueApi();
+    getMapValueApi();
   }, []);
 
   useEffect(() => {
@@ -52,7 +51,7 @@ const PIGraph = (props) => {
     }
 
     setOptions({
-       width:props.w,//in pixels
+        width:props.w,//in pixels
       height:props.h,//in pixels
        legend: {
      horizontalAlign: "center", // left, center ,right 
@@ -66,14 +65,12 @@ const PIGraph = (props) => {
         labelAutoFit:true,
        },
        axisY:{
-        title: "Index",
-   
+        title: "Ratio",
        },
       data: [
              {
           type: "column",
           color:"#36a9f7",
-          
           dataPoints: graphData,
         },
       ],
@@ -92,4 +89,4 @@ const PIGraph = (props) => {
   );
 };
 
-export default PIGraph;
+export default MapGraph;

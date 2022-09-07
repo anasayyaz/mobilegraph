@@ -5,11 +5,12 @@ import SPO2Graph from "./SPO2Graph";
 import QTGraph from "./QTGraph";
 import QTCGraph from "./QTCGraph";
 import QRSGraph from "./QRSGraph";
-
+import MeanArterialPressureGraph from "./MeanArterialPressureGraph";
 import BloodPressureGraph from "./BloodPressureGraph"; 
 import PRGraph from "./PRGraph";
 import PIGraph from "./PIGraph";
 import HRGraph from "./HRGraph";
+import MapGraph from "./MeanArterialPressureGraph";
 let token,pid,vid,type,h,w;
 const Create = (props) => {
   const [modalIsOpenBPModal, setIsOpenBPModal] = React.useState(false);
@@ -55,31 +56,31 @@ const Create = (props) => {
   pid=props.match.params.pid;
   h=props.match.params.height;
   w=props.match.params.width;
-
+alert(type)
 }, []);
   return (
     <div>
      
             {modalIsOpenQTModal ? (
-              <QTGraph />
+              <QTGraph vid={vid} pid={pid} token={token} h={h} w={w} />
               ) : null}
               {modalIsOpenQTCModal ? (
-              <QTCGraph />
+              <QTCGraph vid={vid} pid={pid} token={token} h={h} w={w}/>
               ) : null}
               {modalIsOpenQRSModal ? (
-              <QRSGraph />
+              <QRSGraph vid={vid} pid={pid} token={token} h={h} w={w}/>
               ) : null}
               {modalIsOpenHRModal ? (
-              <HRGraph />
+              <HRGraph vid={vid} pid={pid} token={token} h={h} w={w}/>
               ) : null}
               {modalIsOpenPRModal ? (
-              <h2>pr</h2>
+              <PRGraph vid={vid} pid={pid} token={token} h={h} w={w}/>
               ) : null}
               {modalIsOpenPIModal ? (
-              <PIGraph />
+              <PIGraph vid={vid} pid={pid} token={token} h={h} w={w}/>
               ) : null}
               {modalIsOpenSPO2Modal ? (
-              <SPO2Graph />
+              <SPO2Graph vid={vid} pid={pid} token={token} h={h} w={w}/>
               ) : null}
               {modalIsOpenTempModal ? (
               <TempGraph vid={vid} pid={pid} token={token} h={h} w={w}/>
@@ -88,10 +89,10 @@ const Create = (props) => {
               <Canvas vid={vid} pid={pid} token={token} h={h} w={w}/>
               ) : null}
               {modalIsOpenMAPModal ? (
-              <h2>map</h2>
+              <MapGraph vid={vid} pid={pid} token={token} h={h} w={w}/>
               ) : null}
               {modalIsOpenBPModal ? (
-              <BloodPressureGraph />
+              <BloodPressureGraph vid={vid} pid={pid} token={token} h={h} w={w}/>
               ) : null}
             
     

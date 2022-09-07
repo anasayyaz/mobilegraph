@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+
 import CanvasJSReact from "./canvasjs.react";
+let link='https://cloudclinicapi.azurewebsites.net/api/';
 //var CanvasJSReact = require('./canvasjs.react');
 var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
@@ -10,8 +11,7 @@ const BloodPressureGraph = (props) => {
   let dia_data = [];
 let h,w;
   const [options, setOptions] = useState();
-  const token = useSelector((state) => state.userReducer.token);
-  const user_id = useSelector((state) => state.userReducer.users);
+
   const [errorText, setErrorText] = useState();
   const [sysData, setSysData] = useState([]);
   const [diaData, setDiaData] = useState([]);
@@ -20,12 +20,12 @@ let h,w;
   const getBloodPressureApi = async () => {
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_API_URL}VitalSign/getPatienttemp/${props.patient_id}`,
+        `${link}VitalSign/getPatienttemp/${props.pid}`,
         {
           method: "GET",
           body: null,
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${props.token}`,
           },
         }
       ).then((response) => {
@@ -89,8 +89,8 @@ let h,w;
     }
 
     setOptions({
-       width:w,//in pixels
-       height:h,//in pixels
+       width:props.w,//in pixels
+       height:props.h,//in pixels
        legend: {
      horizontalAlign: "center", // left, center ,right 
      verticalAlign: "top",  // top, center, bottom
@@ -124,7 +124,7 @@ let h,w;
   }, [sysData, diaData, visitDate]);
 
   return (
-    <div className={"my-modal-custom-class"}>
+    <div className="w-100">
       {options && (
         <CanvasJSChart
           options={options}

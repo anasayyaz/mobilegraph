@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+
 import CanvasJSReact from "./canvasjs.react";
+let link='https://cloudclinicapi.azurewebsites.net/api/';
 var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
@@ -8,8 +9,7 @@ const SPO2Graph = (props) => {
   let graphData = [];
 
   const [options, setOptions] = useState();
-  const token = useSelector((state) => state.userReducer.token);
-  const user_id = useSelector((state) => state.userReducer.users);
+
   const [errorText, setErrorText] = useState();
   const [data, setData] = useState([]);
   const [visitDate, setVisitDate] = useState([]);
@@ -17,12 +17,12 @@ const SPO2Graph = (props) => {
   const getPRValueApi = async () => {
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_API_URL}VitalSign/getPatienttemp/${props.patient_id}`,
+        `${link}VitalSign/getPatienttemp/${props.pid}`,
         {
           method: "GET",
           body: null,
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${props.token}`,
           },
         }
       ).then((response) => {
@@ -52,8 +52,8 @@ const SPO2Graph = (props) => {
     }
 
     setOptions({
-       width:400,//in pixels
-      height:350,//in pixels
+       width:props.w,//in pixels
+      height:props.h,//in pixels
        legend: {
      horizontalAlign: "center", // left, center ,right 
      verticalAlign: "top",  // top, center, bottom
