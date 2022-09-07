@@ -50,7 +50,7 @@ let x,y;
   };
 
   useEffect(() => {
-    alert(window.innerHeight+"   "+window.innerWidth)
+    // alert(window.innerHeight+"   "+window.innerWidth)
     getECGValueApi();
   }, []);
 

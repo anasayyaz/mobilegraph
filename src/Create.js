@@ -56,11 +56,11 @@ const Create = (props) => {
 
   }, []);
   return (
-    <div className="create" style={{ height: '100%',
-      position: 'absolute',
-      left: 0,
-      width: '100%',
-      overflow: 'hidden'}}>
+    <div style={{  display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100vh',
+  }}>
      
             {modalIsOpenQTModal ? (
               <QTGraph />
