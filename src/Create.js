@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from "react";
 import TempGraph from "./TempGraph";
 import Canvas from "./Canvas";
+import SPO2Graph from "./SPO2Graph";
+import QTGraph from "./QTGraph";
+import QTCGraph from "./QTCGraph";
+import QRSGraph from "./QRSGraph";
+
+import BloodPressureGraph from "./BloodPressureGraph"; 
+import PRGraph from "./PRGraph";
+import PIGraph from "./PIGraph";
+import HRGraph from "./HRGraph";
 let token,pid,vid,type;
 const Create = (props) => {
   const [modalIsOpenBPModal, setIsOpenBPModal] = React.useState(false);
@@ -47,31 +56,35 @@ const Create = (props) => {
 
   }, []);
   return (
-    <div className="create">
+    <div className="create" style={{ height: '100%',
+      position: 'absolute',
+      left: 0,
+      width: '100%',
+      overflow: 'hidden'}}>
      
             {modalIsOpenQTModal ? (
-              <h2>qt</h2>
+              <QTGraph />
               ) : null}
               {modalIsOpenQTCModal ? (
-              <h2>qtc</h2>
+              <QTCGraph />
               ) : null}
               {modalIsOpenQRSModal ? (
-              <h2>qrs</h2>
+              <QRSGraph />
               ) : null}
               {modalIsOpenHRModal ? (
-              <h2>HR</h2>
+              <HRGraph />
               ) : null}
               {modalIsOpenPRModal ? (
               <h2>pr</h2>
               ) : null}
               {modalIsOpenPIModal ? (
-              <h2>pi</h2>
+              <PIGraph />
               ) : null}
               {modalIsOpenSPO2Modal ? (
-              <h2>spo2</h2>
+              <SPO2Graph />
               ) : null}
               {modalIsOpenTempModal ? (
-              <TempGraph pid={pid} token={token}/>
+              <TempGraph vid={vid} pid={pid} token={token}/>
               ) : null}
               {modalIsOpenEcgModal ? (
               <Canvas vid={vid} pid={pid} token={token}/>
@@ -80,7 +93,7 @@ const Create = (props) => {
               <h2>map</h2>
               ) : null}
               {modalIsOpenBPModal ? (
-              <h2>bp</h2>
+              <BloodPressureGraph />
               ) : null}
             
     

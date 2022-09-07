@@ -8,6 +8,9 @@ const Canvas = (props) => {
 let x,y;
   const [errorText, setErrorText] = useState();
   const [data, setData] = useState([]);
+
+
+  
   const getECGValueApi = async () => {
     try {
       const response = await fetch(
@@ -47,6 +50,7 @@ let x,y;
   };
 
   useEffect(() => {
+    alert(window.innerHeight+"   "+window.innerWidth)
     getECGValueApi();
   }, []);
 
@@ -138,8 +142,8 @@ if(status==1)
       {status ? (
       <canvas
         ref={canvasRef}
-        width="800"
-        height="400"
+        width={window.innerWidth}
+        height={window.innerHeight}
         style={{
           backgroundColor: "black",
         }}

@@ -50,8 +50,8 @@ const TempGraph = (props) => {
     }
 
     setOptions({
-       width:400,//in pixels
-      height:350,//in pixels
+       width:window.innerHeight,//in pixels
+      height:window.innerHeight,//in pixels
        legend: {
      horizontalAlign: "center", // left, center ,right 
      verticalAlign: "top",  // top, center, bottom
