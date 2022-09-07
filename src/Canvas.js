@@ -140,6 +140,9 @@ if(status==1)
         height={"300"}
         style={{
           backgroundColor: "black",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       />
         ) : 
@@ -148,7 +151,7 @@ if(status==1)
           justifyContent: "center",
           alignItems: "center",
           height: "100%",
-          widht: "100%",
+          width: "100%",
          
         
         }}>
