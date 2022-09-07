@@ -132,7 +132,7 @@ if(status==1)
   }, [data]);
 
   return (
-    <div className="w-100" >
+    <React.Fragment>
       {status ? (
       <canvas
         ref={canvasRef}
@@ -158,7 +158,7 @@ if(status==1)
         }
 
 
-</div>
+</React.Fragment>
   );
 };
 
