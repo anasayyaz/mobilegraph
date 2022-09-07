@@ -131,12 +131,12 @@ if(status==1)
   }, [data]);
 
   return (
-    <div className="w-100">
+    <div className="w-100" >
       {status ? (
       <canvas
         ref={canvasRef}
-        width={"300"}
-        height={"400"}
+        width={"100%"}
+        height={"300"}
         style={{
           backgroundColor: "black",
         }}
