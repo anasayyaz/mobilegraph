@@ -13,7 +13,7 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/create/:type/:vid/:pid/:token" render={(props) => <Create {...props}/>}/>
+            <Route path="/create/:height/:width/:type/:vid/:pid/:token" render={(props) => <Create {...props}/>}/>
               
           
           </Switch>

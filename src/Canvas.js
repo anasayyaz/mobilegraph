@@ -60,8 +60,8 @@ let x,y;
 if(status==1)
      {const canvas = canvasRef.current;
       var ctx = canvas.getContext("2d"),
-      w = canvas.width,
-      h = canvas.height,
+      w = props.w,
+      h = props.h,
       px = 0,
       opx = 0,
       speed = 1,

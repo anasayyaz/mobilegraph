@@ -10,7 +10,7 @@ import BloodPressureGraph from "./BloodPressureGraph";
 import PRGraph from "./PRGraph";
 import PIGraph from "./PIGraph";
 import HRGraph from "./HRGraph";
-let token,pid,vid,type;
+let token,pid,vid,type,h,w;
 const Create = (props) => {
   const [modalIsOpenBPModal, setIsOpenBPModal] = React.useState(false);
   const [modalIsOpenMAPModal, setIsOpenMAPModal] = React.useState(false);
@@ -53,13 +53,14 @@ const Create = (props) => {
   type=props.match.params.type;
   vid=props.match.params.vid;
   pid=props.match.params.pid;
+  h=props.match.params.height;
+  w=props.match.params.width;
 
   }, []);
   return (
     <div style={{  display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
-    height: '100vh',
+    justifyContent: 'center'
   }}>
      
             {modalIsOpenQTModal ? (
@@ -87,7 +88,7 @@ const Create = (props) => {
               <TempGraph vid={vid} pid={pid} token={token}/>
               ) : null}
               {modalIsOpenEcgModal ? (
-              <Canvas vid={vid} pid={pid} token={token}/>
+              <Canvas vid={vid} pid={pid} token={token} h={h} w={w}/>
               ) : null}
               {modalIsOpenMAPModal ? (
               <h2>map</h2>
