@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-let status;
+let status=1;
 const Canvas = (props) => {
   const canvasRef = useRef(null);
 let x,y;
@@ -50,9 +50,8 @@ let x,y;
   useEffect(() => {
     // console.log(data);
     // alert("status"+status)
-if(status==1)
-     {
-      const canvas = canvasRef.current;
+      if(status==1)
+     {const canvas = canvasRef.current;
       var ctx = canvas.getContext("2d"),
       w = canvas.width,
       h = canvas.height,
@@ -62,7 +61,7 @@ if(status==1)
       py = h * 0.8,
       opy = py,
       scanBarWidth = 20;
-
+      
       ctx.strokeStyle = "#202020";
            ctx.lineWidth = 1;
         
@@ -101,7 +100,6 @@ if(status==1)
    
         ctx.strokeStyle = "#202020";
   ctx.lineWidth = 1;
- 
          ctx.clearRect(0, 0, w, h);
       
  
@@ -120,7 +118,7 @@ if(status==1)
       <canvas
         ref={canvasRef}
         width={props.w}
-        height={props.h}
+        height={props.h/2}
         style={{
           backgroundColor: "black",
         }}
