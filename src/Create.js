@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TempGraph from "./TempGraph";
+import Canvas from "./Canvas";
 let token,pid,vid,type;
 const Create = (props) => {
   const [modalIsOpenBPModal, setIsOpenBPModal] = React.useState(false);
@@ -73,7 +74,7 @@ const Create = (props) => {
               <TempGraph pid={pid} token={token}/>
               ) : null}
               {modalIsOpenEcgModal ? (
-              <h2>ecg</h2>
+              <Canvas vid={vid}/>
               ) : null}
               {modalIsOpenMAPModal ? (
               <h2>map</h2>

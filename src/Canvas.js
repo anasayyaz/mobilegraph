@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 let status;
+
 const Canvas = (props) => {
   const canvasRef = useRef(null);
   const token = useSelector((state) => state.userReducer.token);
@@ -10,7 +11,7 @@ let x,y;
   const getECGValueApi = async () => {
     try {
       const response = await fetch(
-        `https://cloudclinicapi.azurewebsites.net/api/vitalsign/getPatientVitalSignbyVisit/${props.id}`,
+        `https://cloudclinicapi.azurewebsites.net/api/vitalsign/getPatientVitalSignbyVisit/${props.vid}`,
         {
           method: "GET",
           body: null,
