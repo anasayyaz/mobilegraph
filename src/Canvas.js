@@ -104,7 +104,7 @@ if(status==1)
 
       opx = px;
       opy = py;
-      if (opx == w+80) {
+      if (opx == w+60) {
         px = opx = 0;
    
         ctx.strokeStyle = "#202020";
