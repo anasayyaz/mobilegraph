@@ -53,8 +53,8 @@ let x,y;
 if(status==1)
      {const canvas = canvasRef.current;
       var ctx = canvas.getContext("2d"),
-      w = canvas.width,
-      h = canvas.height,
+      w = 300,
+      h = 300,
       px = 0,
       opx = 0,
       speed = 1,
@@ -104,14 +104,14 @@ if(status==1)
 
       opx = px;
       opy = py;
-      if (opx == w+80) {
+      if (opx == w+60) {
         px = opx = 0;
    
         ctx.strokeStyle = "#202020";
   ctx.lineWidth = 1;
 // for (x=0;x<=w;x+=40) {
 
-         ctx.clearRect(0, 0, w, h);
+         ctx.clearRect(0, 0, 300, 300);
       
   //       for (y=0;y<=h;y+=40) {
   //           ctx.moveTo(x, 0);
