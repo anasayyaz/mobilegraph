@@ -53,8 +53,8 @@ let x,y;
 if(status==1)
      {const canvas = canvasRef.current;
       var ctx = canvas.getContext("2d"),
-      w = props.w,
-      h = props.h,
+      w = canvas.width,
+      h = canvas.height,
       px = 0,
       opx = 0,
       speed = 1,
@@ -104,14 +104,14 @@ if(status==1)
 
       opx = px;
       opy = py;
-      if (opx == props.w*1.2) {
+      if (opx == w+80) {
         px = opx = 0;
    
         ctx.strokeStyle = "#202020";
   ctx.lineWidth = 1;
 // for (x=0;x<=w;x+=40) {
 
-         ctx.clearRect(0, 0, props.w, props.h);
+         ctx.clearRect(0, 0, w, h);
       
   //       for (y=0;y<=h;y+=40) {
   //           ctx.moveTo(x, 0);
@@ -136,8 +136,8 @@ if(status==1)
       {status ? (
       <canvas
         ref={canvasRef}
-        width={props.w}
-        height={props.h}
+        width={"300"}
+        height={"300"}
         style={{
           backgroundColor: "black",
           display: "flex",
