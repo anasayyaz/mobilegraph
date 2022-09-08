@@ -106,7 +106,7 @@ if(status==1)
       opy = py;
       console.log(opx, px ,opy,py);
       if (opx == w  && !isNaN(opy)) {
-        alert("clear")
+        
         px = opx = 0;
    
         ctx.strokeStyle = "#202020";
