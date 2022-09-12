@@ -81,7 +81,7 @@ console.log(graphData);
   }, [data, visitDate]);
 
   return (
-    <div className="w-100">
+    <div >
          
       {options && (
    

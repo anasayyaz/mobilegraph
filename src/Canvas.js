@@ -134,7 +134,12 @@ if(status==1)
   }, [data]);
 
   return (
-    <React.Fragment>
+    <div style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: '100vh',
+    }}>
       {status ? (
       <canvas
         ref={canvasRef}
@@ -163,7 +168,7 @@ if(status==1)
         }
 
 
-</React.Fragment>
+</div>
   );
 };
 
