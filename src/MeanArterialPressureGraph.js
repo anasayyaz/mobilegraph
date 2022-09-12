@@ -79,7 +79,12 @@ const MapGraph = (props) => {
   }, [data, visitDate]);
 
   return (
-    <div className="w-100">
+    <div style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: '100vh',
+    }}>
       {options && (
         <CanvasJSChart
           options={options}

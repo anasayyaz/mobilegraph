@@ -86,7 +86,6 @@ console.log(graphData);
       alignItems: 'center',
       justifyContent: 'center',
       height: '100vh',
-      width:' 100vw'
     }}>
          
       {options && (
