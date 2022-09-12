@@ -59,7 +59,12 @@ const Create = (props) => {
 // alert(type)
 }, []);
   return (
-    <div>
+    <div style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: '100vh',
+    }}>
      
             {modalIsOpenQTModal ? (
               <QTGraph vid={vid} pid={pid} token={token} h={h} w={w} />
