@@ -6,9 +6,9 @@ import Create from './Create';
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="App" style={{ backgroundColor: '#66758C'}}>
        
-        <div className="content">
+        <div >
           <Switch>
             <Route exact path="/">
               <Home />

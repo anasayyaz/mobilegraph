@@ -59,7 +59,7 @@ const Create = (props) => {
 // alert(type)
 }, []);
   return (
-    <div style={{color:'#66758C',backgroundColor:'#66758C'}}>
+    <div >
      
             {modalIsOpenQTModal ? (
               <QTGraph vid={vid} pid={pid} token={token} h={h} w={w} />

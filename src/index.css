@@ -3,11 +3,11 @@
 /* base styles */
 * {
   margin: 0;
-  font-family: "Quicksand";
+  font-family: "Poppins-Medium";
   color: #333;
 }
 .navbar {
-  padding: 20px;
+  padding: 0px;
   display: flex;
   align-items: center;
   max-width: 600px;
@@ -31,7 +31,7 @@
 .content {
   max-width: 600px;
   margin: 40px auto;
-  padding: 20px;
+  padding: 0px;
 }
 
 /* blog previews / list */
