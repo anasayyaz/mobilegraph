@@ -81,7 +81,12 @@ console.log(graphData);
   }, [data, visitDate]);
 
   return (
-    <div >
+    <div style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: '100vh',
+    }}>
          
       {options && (
    
